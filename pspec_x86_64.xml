@@ -1,0 +1,39 @@
+<PISI>
+    <Source>
+        <Name>logrotate</Name>
+        <Packager>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
+        </Packager>
+        <License>GPL-2.0</License>
+        <PartOf>system.utils</PartOf>
+        <Summary xml:lang="en">Rotates, compresses, removes and emails system log files</Summary>
+        <Description xml:lang="en">logrotate is designed to ease administration of systems that generate large numbers of log files. It allows automatic rotation, compression, removal, and emailing of log files.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://solus-project.com/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>logrotate</Name>
+        <Summary xml:lang="en">Rotates, compresses, removes and emails system log files</Summary>
+        <Description xml:lang="en">logrotate is designed to ease administration of systems that generate large numbers of log files. It allows automatic rotation, compression, removal, and emailing of log files.
+</Description>
+        <PartOf>system.utils</PartOf>
+        <Files>
+            <Path fileType="config">/etc/logrotate.conf</Path>
+            <Path fileType="library">/usr/lib64/systemd/system/logrotate.service</Path>
+            <Path fileType="library">/usr/lib64/systemd/system/logrotate.timer</Path>
+            <Path fileType="library">/usr/lib64/tmpfiles.d/logrotate.conf</Path>
+            <Path fileType="executable">/usr/sbin</Path>
+            <Path fileType="man">/usr/share/man</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="3">
+            <Date>2017-12-15</Date>
+            <Version>3.13.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>Pierre-Yves</Name>
+            <Email>pyu@riseup.net</Email>
+        </Update>
+    </History>
+</PISI>

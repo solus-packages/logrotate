@@ -1,0 +1,23 @@
+name       : logrotate
+version    : 3.13.0
+release    : 3
+source     :
+    - https://github.com/logrotate/logrotate/releases/download/3.13.0/logrotate-3.13.0.tar.xz : 3222ca032f99be8d7a4a8c6ad69f3dcc49b9511bfe384bd5a271ebcd9bd3e52c
+license    : GPL-2.0
+component  : system.utils
+summary    : Rotates, compresses, removes and emails system log files
+description: |
+    logrotate is designed to ease administration of systems that generate large numbers of log files. It allows automatic rotation, compression, removal, and emailing of log files.
+builddeps  :
+    - pkgconfig(popt)
+setup      : |
+    %configure --with-acl \
+        --with-state-file-path=/var/lib/logrotate/logrotate.status
+build      : |
+    %make
+install    : |
+    %make_install
+    install -D -m00644 examples/logrotate.service $installdir/%libdir%/systemd/system/logrotate.service
+    install -D -m00644 examples/logrotate.timer $installdir/%libdir%/systemd/system/logrotate.timer
+    install -D -m00644 examples/logrotate-default $installdir/etc/logrotate.conf
+    install -D -m00644 $pkgfiles/logrotate.tmpfiles $installdir/%libdir%/tmpfiles.d/logrotate.conf
