@@ -2,8 +2,8 @@
     <Source>
         <Name>logrotate</Name>
         <Packager>
-            <Name>Pierre-Yves</Name>
-            <Email>pyu@riseup.net</Email>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
         </Packager>
         <License>GPL-2.0</License>
         <PartOf>system.utils</PartOf>
@@ -23,17 +23,18 @@
             <Path fileType="library">/usr/lib64/systemd/system/logrotate.service</Path>
             <Path fileType="library">/usr/lib64/systemd/system/logrotate.timer</Path>
             <Path fileType="library">/usr/lib64/tmpfiles.d/logrotate.conf</Path>
-            <Path fileType="executable">/usr/sbin</Path>
-            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="executable">/usr/sbin/logrotate</Path>
+            <Path fileType="man">/usr/share/man/man5/logrotate.conf.5</Path>
+            <Path fileType="man">/usr/share/man/man8/logrotate.8</Path>
         </Files>
     </Package>
     <History>
-        <Update release="3">
-            <Date>2017-12-15</Date>
-            <Version>3.13.0</Version>
+        <Update release="4">
+            <Date>2018-08-27</Date>
+            <Version>3.14.0</Version>
             <Comment>Packaging update</Comment>
-            <Name>Pierre-Yves</Name>
-            <Email>pyu@riseup.net</Email>
+            <Name>Bryan T. Meyers</Name>
+            <Email>bmeyers@datadrake.com</Email>
         </Update>
     </History>
 </PISI>

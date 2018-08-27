@@ -1,8 +1,8 @@
 name       : logrotate
-version    : 3.13.0
-release    : 3
+version    : 3.14.0
+release    : 4
 source     :
-    - https://github.com/logrotate/logrotate/releases/download/3.13.0/logrotate-3.13.0.tar.xz : 3222ca032f99be8d7a4a8c6ad69f3dcc49b9511bfe384bd5a271ebcd9bd3e52c
+    - https://github.com/logrotate/logrotate/archive/3.14.0.tar.gz : 593bd4ed9bad7761b6ad3f2689e6ac7d369db15ac141abbc9a8d296663b035fd
 license    : GPL-2.0
 component  : system.utils
 summary    : Rotates, compresses, removes and emails system log files
@@ -11,7 +11,7 @@ description: |
 builddeps  :
     - pkgconfig(popt)
 setup      : |
-    %configure --with-acl \
+    %reconfigure --with-acl \
         --with-state-file-path=/var/lib/logrotate/logrotate.status
 build      : |
     %make
